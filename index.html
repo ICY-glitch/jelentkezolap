@@ -7,7 +7,7 @@
     <title>Jelentkezőlap</title>
 </head>
 <body>
-<form action="jelentkezes.php" method="post">
+<form class="radio-inline" action="jelentkezes.php" method="post">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-primary">
 
@@ -39,33 +39,57 @@
             <!-- personal cuccok row -->
             <div class="row bg-info rounded">
 
-
-                    <label for="nev" class="ms-2">Teljes nev:</label>
-                    <input class="col-lg-3 ms-3" type="text" name="nev" id="nev">
+                    <label for="nev" class="ms-2">Teljes nev:</label>                        <!-- nev -->
+                    <input class="col-lg-3 ms-3" type="text" name="nev" id="nev" required>
                         <br>
-                    <label for="ev" class="ms-2">Szuletesi ev:</label>
-                    <input class="col-lg-3 ms-3" type="date" name="szuletesiev" id="ev">
+                    <label for="ev" class="ms-2">Szuletesi ev:</label>                           <!-- Szuletesi ev -->
+                    <input class="col-lg-3 ms-3" type="date" name="szuletesiev" id="ev" required>
                         <br>
-                    <label for="lakcim" class="ms-2">Lakcim:</label>
-                    <input class="col-lg-3 ms-3" type="text" name="lakcim" id="lakcim">
+                    <label for="lakcim" class="ms-2">Lakcim:</label>                               <!-- Lakcim -->
+                    <input class="col-lg-3 ms-3" type="text" name="lakcim" id="lakcim" required>
                         <br>
-                    <label for="telefon" class="ms-2">Telefon:</label>
-                    <input class="col-lg-3 ms-3" type="text" name="telefon" id="telefon">
+                    <label for="telefon" class="ms-2">Telefon:</label>                             <!-- Telefonszam -->
+                    <input class="col-lg-3 ms-3" type="number" name="telefon" id="telefon" required>
                         <br>
-                    <label for="email" class="ms-2">Email:</label>
-                    <input class="col-lg-3 ms-3" type="email" name="email" id="email">
+                    <label for="email" class="ms-2">Email:</label>                                 <!-- Email -->
+                    <input class="col-lg-3 ms-3" type="email" name="email" id="email" required>
 
                     <label>Nem:</label>
+                                                                            <!-- Nem radiok -->
+                    <div class="form-check">
+                    <input type="radio" id="ferfi" name="nem" value="ferfi" required>
+                    <label for="ferfi">Ferfi</label><br>
+                    </div>
 
-                    <input type="radio" id="ferfi" name="nem" value="ferfi">
-                    <label for="ferfi">Ferfi</label>
+                    <div class="form-check">
+                    <input type="radio" id="no" name="nem" value="no" required>
+                    <label for="no">No</label><br>
+                    </div>
 
-                    <input type="radio" id="no" name="nem" value="no">
-                    <label for="no">No</label>
+                    <div class="form-check">
+                    <input type="radio" id="walmartbag" name="nem" value="walmartbag" required>
+                    <label for="walmartbag">Walmart Bag</label>
+                    </div>
 
-                    <input type="radio" id="non" name="nem" value="non">
-                    <label for="non">Nem letezem</label>
+
+                <input type="submit">
             </div>
+
+                                            <!-- tanultsag -->
+            <div class="row bg-info rounded">
+                <select class="form-select w-" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
+
+
+
+            </div>
+
+
 
         </div>
 
