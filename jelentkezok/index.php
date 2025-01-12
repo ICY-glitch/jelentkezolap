@@ -9,7 +9,7 @@
 <body>
 <form class="radio-inline" action="jelentkezes.php" method="post">
     <!-- navbar -->
-    <nav class="navbar bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-primary">
 
         <div class="container-fluid">
 
@@ -33,7 +33,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-4">
         <h1 class="text-center mb-4">Jelentkezok</h1>
         <table class="table table-striped table-bordered">
             <thead>
