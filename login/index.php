@@ -90,10 +90,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             echo "<script>alert('Sikeres bejelentkezes'); window.location.href = '../opjelent/';</script>";
         } else {
-            echo "<script>alert('Sikertelen bejelentkezes'); window.location.href = 'index.html';</script>";
+            echo "<script>alert('Sikertelen bejelentkezes'); window.location.href = 'index.php';</script>";
         }
     } else {
-        echo "<script>alert('Sikertelen bejelentkezes'); window.location.href = 'index.html';</script>";
+        echo "<script>alert('Sikertelen bejelentkezes'); window.location.href = 'index.php';</script>";
     }
 }
 ?>
