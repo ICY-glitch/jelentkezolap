@@ -8,7 +8,7 @@
 </head>
 <body>
 <form class="radio-inline" action="jelentkezes.php" method="post">
-    <!-- navbar -->
+    <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-primary">
 
         <div class="container-fluid">
