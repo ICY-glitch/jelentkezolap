@@ -6,9 +6,7 @@ error_reporting(E_ALL);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nev = $_POST['nev'];
     $ev = ($_POST['szuletesiev']); // Reformat date input
-    echo $ev;
     $ev = date('Y-m-d', strtotime($ev));
-    echo $ev;
     $lakcim = $_POST['lakcim'];
     $telefon = $_POST['telefon'];
     $email = $_POST['email'];
@@ -44,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($stmt->execute()) {
-        echo "Data submitted successfully.";
+        echo "<script>alert('Sikeres adatbeküldés'); window.location.href = './index.html';</script>";
     } else {
         echo "Error: " . $stmt->error;
     }
