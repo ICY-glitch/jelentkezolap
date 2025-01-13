@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nev = $_POST['nev'];
-    $ev = ($_POST['szuletesiev']); // Reformat date input
+    $ev = ($_POST['szuletesiev']);
     $ev = date('Y-m-d', strtotime($ev));
     $lakcim = $_POST['lakcim'];
     $telefon = $_POST['telefon'];

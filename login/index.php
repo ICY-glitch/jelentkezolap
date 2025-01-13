@@ -27,6 +27,11 @@
                         <button type="submit" class="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
+
+                <div class="card-footer text-center">
+                    <a href="https://github.com/ICY-glitch/jelentkezolap">Github repository</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -36,21 +41,18 @@
 </body>
 </html>
 
-<!-- PHP: login.php -->
 <?php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Include database connection
 require '../connect.php';
 
 if (!$conn) {
     die("Database connection failed.");
 }
 
-// Check if cookie exists and validate
 if (isset($_COOKIE['user_session']) && !empty($_COOKIE['user_session'])) {
     $cookieValue = $_COOKIE['user_session'];
     $stmt = $conn->prepare("SELECT felhnev FROM felhasznalok WHERE cookie = ?");
@@ -59,11 +61,9 @@ if (isset($_COOKIE['user_session']) && !empty($_COOKIE['user_session'])) {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // Redirect to dashboard if cookie is valid
         echo "<script>window.location.href = '../opjelent/';</script>";
         exit;
     } else {
-        // If the cookie is invalid, clear it
         setcookie('user_session', '', time() - 3600, "/");
     }
 }
@@ -80,13 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result->num_rows > 0) {
         $userRecord = $result->fetch_assoc();
 
-        // Check password
         if (password_verify($pass, $userRecord['jelszo'])) {
-            // Generate session cookie
             $cookieValue = bin2hex(random_bytes(16));
-            setcookie('user_session', $cookieValue, time() + (86400 * 30), "/"); // 30-day expiry
+            setcookie('user_session', $cookieValue, time() + (86400 * 30), "/");
 
-            // Update cookie in the database
             $updateStmt = $conn->prepare("UPDATE felhasznalok SET cookie = ? WHERE felhnev = ?");
             $updateStmt->bind_param('ss', $cookieValue, $user);
             $updateStmt->execute();

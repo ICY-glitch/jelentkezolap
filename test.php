@@ -17,10 +17,8 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
-    // Hash the password using PHP's password_hash function
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-    // Display the hashed password
     echo "<h2>Hashed Password:</h2>";
     echo "<p><code>$hashedPassword</code></p>";
 }

@@ -55,12 +55,12 @@
             <?php
                 require "../connect.php";
 
-            // Fetch data from the database
+
             $sql = "SELECT nev, ev, lakcim, telefon, email, nem, allasok, iskola, nyelvtudas, tapasztalat, nyelvek FROM jelentkezok";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-            // Output data of each row
+
             while($row = $result->fetch_assoc()) {
             echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['nev']) . "</td>";
